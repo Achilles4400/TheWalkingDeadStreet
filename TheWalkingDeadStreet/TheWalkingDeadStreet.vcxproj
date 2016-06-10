@@ -142,6 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="..\..\..\Fichiers test\T_2_10.txt" />
+    <Text Include="..\..\..\Fichiers test\T_2_5.txt" />
+    <Text Include="..\..\..\Fichiers test\T_3_20.txt" />
+    <Text Include="..\..\..\Fichiers test\T_4_20.txt" />
+    <Text Include="..\..\..\Fichiers test\T_5_30.txt" />
+    <Text Include="..\..\..\Fichiers test\T_7_30.txt" />
+    <Text Include="..\..\..\Fichiers test\ville.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

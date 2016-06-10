@@ -13,9 +13,33 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichier de tests">
+      <UniqueIdentifier>{f3a8e87d-6090-4b6f-88ea-07e236734f03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="..\..\..\Fichiers test\T_2_5.txt">
+      <Filter>Fichier de tests</Filter>
+    </Text>
+    <Text Include="..\..\..\Fichiers test\T_2_10.txt">
+      <Filter>Fichier de tests</Filter>
+    </Text>
+    <Text Include="..\..\..\Fichiers test\T_3_20.txt">
+      <Filter>Fichier de tests</Filter>
+    </Text>
+    <Text Include="..\..\..\Fichiers test\T_4_20.txt">
+      <Filter>Fichier de tests</Filter>
+    </Text>
+    <Text Include="..\..\..\Fichiers test\T_5_30.txt">
+      <Filter>Fichier de tests</Filter>
+    </Text>
+    <Text Include="..\..\..\Fichiers test\T_7_30.txt">
+      <Filter>Fichier de tests</Filter>
+    </Text>
+    <Text Include="..\..\..\Fichiers test\ville.txt">
+      <Filter>Fichier de tests</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
