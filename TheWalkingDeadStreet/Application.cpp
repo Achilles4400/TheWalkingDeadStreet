@@ -96,12 +96,17 @@ void Application::maximiseWalkerKilled()
 void Application::maximiseWalkerKilledDistConstraint(unsigned dist)
 {
 	vector<int> shooterPosition;
+	int shooterPlaced = 0;
 	map<int, vector<int>> incompatibilities = computeIncompatibilities(dist);
 
 	sortTourellesByEst();
 	for (vector<Tourelle>::iterator it = this->tourelles.begin(); it != this->tourelles.end(); ++it) {
 		if (isCompatible(shooterPosition, incompatibilities.at(it->getPosition()))) {
-			shooterPosition.push_back(it->getPosition());
+			if (shooterPlaced < this->nombreDeTtireur) {
+				shooterPosition.push_back(it->getPosition());
+				shooterPlaced++;
+			}
+			
 		}
 	}
 
