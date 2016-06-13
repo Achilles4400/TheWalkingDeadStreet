@@ -4,7 +4,10 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
+#include <algorithm> 
 #include <string>
+#include <map>
+#include <cmath>
 
 using namespace std;
 
@@ -14,7 +17,13 @@ public:
 	Application(string file);
 	~Application();
 
-	static void setupData(string file);
+	void showTourelles();
+	void sortTourellesByEst();
+	void sortTourellesByDist();
+	void maximiseWalkerKilled();
+	void maximiseWalkerKilledDistConstraint(unsigned dist);
+
+	map<int, vector<int>> computeIncompatibilities(unsigned dist);
 
 private:
 	FILE applicationFile;

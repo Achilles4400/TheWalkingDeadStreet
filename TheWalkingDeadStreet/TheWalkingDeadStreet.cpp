@@ -3,11 +3,18 @@
 
 #include "stdafx.h"
 
+using namespace std;
 
 int main()
 {
-	std::string test = "C:\Users\vince\Documents\Algo\Devoir 2\Fichiers test\T_2_5.txt";
-	Application::setupData(test);
+	int distConstraint = 5;
+	std::string test = "C:\\Users\\vince\\Documents\\Algo\\Devoir_ 2\\Fichiers_test\\T_4_20.txt";
+	cout << test << endl;
+
+	Application myTest(test);
+
+	//myTest.maximiseWalkerKilled();
+	myTest.maximiseWalkerKilledDistConstraint(distConstraint);
 	
     return 0;
 }
