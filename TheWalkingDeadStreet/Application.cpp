@@ -93,8 +93,7 @@ int initWeather() {
 	return (rand() % 31) - 15;
 }
 
-vector<Tourelle> getAdjacentTower(vector<Tourelle> tourelles, int position) {
-	vector<Tourelle> adjacent;
+vector<Tourelle> getAdjacentTower(vector<Tourelle> tourelles, int position, vector<Tourelle> adjacent) {
 	for (vector<Tourelle>::iterator it = tourelles.begin(); it != tourelles.end(); ++it) {
 		if (it->getPosition() == position + 1 || it->getPosition() == position - 1) {
 			adjacent.push_back(*it);
@@ -105,8 +104,6 @@ vector<Tourelle> getAdjacentTower(vector<Tourelle> tourelles, int position) {
 
 void Application::maximiseWalkerKilledWeatherConstraint(unsigned dist)
 {
-	int weather = initWeather();
-	vector<Tourelle> adjacent;
 	vector<Tourelle> shooterPosition;
 	int shooterPlaced = 0;
 	map<int, vector<int>> incompatibilities = computeIncompatibilities(dist);
@@ -120,20 +117,21 @@ void Application::maximiseWalkerKilledWeatherConstraint(unsigned dist)
 			}
 		}
 	}
-	for (vector<Tourelle>::iterator it = shooterPosition.begin(); it != shooterPosition.end(); ++it) {
-		if (it != shooterPosition.begin()) {
-			adjacent = getAdjacentTower(this->tourelles, it->getPosition());
-			it->setEstimation(it->getEstimation() + it->getEstimation() * weather);
-		}
-		else {
-			if (weather < 0) {
-				for (vector<Tourelle>::iterator adja = adjacent.begin(); adja != adjacent.end(); ++adja) {
+
+	int weather = initWeather();
+	map<int, Tourelle> adjacent;
+	vector<Tourelle>::iterator mIt = shooterPosition.begin();
+
+	while (mIt != shooterPosition.end()) {
+		for (map<int, Tourelle>::iterator it = adjacent.begin(); it != adjacent.end(); ++it) {
+			if (it->first > 0) {
+				if ((it->second.getEstimation() + it->second.getEstimation() *0.15) > mIt->getEstimation()) {
 
 				}
 			}
-			adjacent = getAdjacentTower(this->tourelles, it->getPosition());
-		}
+		}		
 	}
+
 	for (vector<Tourelle>::iterator it = shooterPosition.begin(); it != shooterPosition.end(); ++it)
 		cout << it->toString() << endl;
 }

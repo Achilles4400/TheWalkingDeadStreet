@@ -10,6 +10,7 @@
 #include <map>
 #include <cmath>
 #include <time.h>
+#include <list>
 
 using namespace std;
 

@@ -17,6 +17,7 @@ int main()
 	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
 	//myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
 
+	/*
 	RSA rsa;
 	Key key = rsa.generateKeys();
 	long msg;
@@ -27,4 +28,5 @@ int main()
 	msg_des = rsa.encrypt(msg_des, key.modKey, key.primeKey);
 	cout << "message original ：" << msg_des << endl;
 	return 0;
+	*/
 }
