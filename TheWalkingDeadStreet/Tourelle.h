@@ -12,6 +12,7 @@ public:
 	int getDistance() { return this->distance; }
 	int getEstimation() { return this->estimation; }
 	int getPosition() { return this->position; }
+	void setEstimation(int estimation) { this->estimation = estimation; }
 
 	string toString();
 

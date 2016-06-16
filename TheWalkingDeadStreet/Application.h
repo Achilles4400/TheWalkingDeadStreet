@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Tourelle.h"
+#include "utils.h"
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -8,6 +9,7 @@
 #include <string>
 #include <map>
 #include <cmath>
+#include <time.h>
 
 using namespace std;
 
@@ -22,6 +24,7 @@ public:
 	void sortTourellesByDist();
 	void maximiseWalkerKilled();
 	void maximiseWalkerKilledDistConstraint(unsigned dist);
+	void maximiseWalkerKilledWeatherConstraint(unsigned dist);
 
 	map<int, vector<int>> computeIncompatibilities(unsigned dist);
 

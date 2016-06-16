@@ -1,4 +1,4 @@
-// TheWalkingDeadStreet.cpp�: d�finit le point d'entr�e pour l'application console.
+﻿// TheWalkingDeadStreet.cpp : définit le point d'entrée pour l'application console.
 //
 
 #include "stdafx.h"
@@ -14,7 +14,17 @@ int main()
 	Application myTest(test);
 
 	//myTest.maximiseWalkerKilled();
-	myTest.maximiseWalkerKilledDistConstraint(distConstraint);
-	
-    return 0;
+	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
+	//myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
+
+	RSA rsa;
+	Key key = rsa.generateKeys();
+	long msg;
+	cout << "entrez le message ：" << endl;
+	cin >> msg;
+	long msg_des = rsa.encrypt(msg, key.eKey, key.primeKey);
+	cout << "message crypté ：" << msg_des << endl;
+	msg_des = rsa.encrypt(msg_des, key.modKey, key.primeKey);
+	cout << "message original ：" << msg_des << endl;
+	return 0;
 }

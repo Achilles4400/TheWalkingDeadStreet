@@ -8,6 +8,7 @@
 #include "targetver.h"
 
 #include "Application.h"
+#include "RSA.h"
 
 #include <stdio.h>
 #include <tchar.h>
