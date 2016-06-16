@@ -26,6 +26,9 @@ public:
 	void maximiseWalkerKilled();
 	void maximiseWalkerKilledDistConstraint(unsigned dist);
 	void maximiseWalkerKilledWeatherConstraint(unsigned dist);
+	void getTourelles(ifstream &file);
+	void getShootersAndTourelleNumber(ifstream &file);
+	vector<int> lookForIncompatibility(vector<Tourelle>::iterator &it, int position, unsigned dist);
 
 	map<int, vector<int>> computeIncompatibilities(unsigned dist);
 
@@ -34,6 +37,7 @@ private:
 	int nombreDeTtireur;
 	int nombreDeTours;
 	vector<Tourelle> tourelles;
+	string delimiter;
 	
 };
 
