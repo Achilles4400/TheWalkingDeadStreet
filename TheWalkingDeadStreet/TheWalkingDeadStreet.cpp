@@ -5,10 +5,13 @@
 
 using namespace std;
 
+string config_vincent = "C:\\Users\\vince\\Documents\\Algo\\Devoir_ 2\\Fichiers_test\\T_4_20.txt";
+string config_kevin = "C:\\Users\\Kevin\\Downloads\\devoir2\\devoir\\test\\T_4_20.txt";
+
 int main()
 {
 	int distConstraint = 5;
-	std::string test = "C:\\Users\\vince\\Documents\\Algo\\Devoir_ 2\\Fichiers_test\\T_4_20.txt";
+	std::string test = config_kevin;
 	cout << test << endl;
 
 	Application myTest(test);
@@ -17,7 +20,7 @@ int main()
 	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
 	//myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
 
-	RSA rsa;
+	/*RSA rsa;
 	Key key = rsa.generateKeys();
 	long msg;
 	cout << "entrez le message ：" << endl;
@@ -25,6 +28,6 @@ int main()
 	long msg_des = rsa.encrypt(msg, key.eKey, key.primeKey);
 	cout << "message crypté ：" << msg_des << endl;
 	msg_des = rsa.encrypt(msg_des, key.modKey, key.primeKey);
-	cout << "message original ：" << msg_des << endl;
+	cout << "message original ：" << msg_des << endl;*/
 	return 0;
 }
