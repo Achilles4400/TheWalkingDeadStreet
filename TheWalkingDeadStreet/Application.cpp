@@ -22,7 +22,6 @@ Application::Application(string file)
 	}
 }
 
-
 void Application::getShootersAndTourelleNumber(ifstream &file) {
 	string line;
 	getline(file, line);
@@ -31,7 +30,6 @@ void Application::getShootersAndTourelleNumber(ifstream &file) {
 	getline(file, line);
 	nombreDeTours = stoi(line, nullptr, 10);
 }
-
 
 void Application::getTourelles(ifstream &file) {
 	string line;
@@ -54,11 +52,9 @@ void Application::getTourelles(ifstream &file) {
 	file.close();
 }
 
-
 Application::~Application()
 {
 }
-
 
 void Application::showTourelles()
 {
@@ -66,18 +62,15 @@ void Application::showTourelles()
 		cout << it->toString() << endl;
 }
 
-
 void Application::sortTourellesByEst()
 {
 	sort(this->tourelles.rbegin(), this->tourelles.rend(), utils::Sort_by_est);
 }
 
-
 void Application::sortTourellesByDist()
 {
 	sort(this->tourelles.rbegin(), this->tourelles.rend(), utils::Sort_by_dist);
 }
-
 
 void Application::maximiseWalkerKilled()
 {
@@ -85,7 +78,6 @@ void Application::maximiseWalkerKilled()
 	for (vector<Tourelle>::iterator it = this->tourelles.begin(); it != this->tourelles.begin() + this->nombreDeTtireur; ++it)
 		cout << it->toString() << endl;
 }
-
 
 void Application::maximiseWalkerKilledDistConstraint(unsigned dist)
 {
@@ -106,12 +98,10 @@ void Application::maximiseWalkerKilledDistConstraint(unsigned dist)
 		cout << it->toString() << endl;
 }
 
-
 int initWeather() {
 	srand(time(NULL));
 	return (rand() % 31) - 15;
 }
-
 
 vector<Tourelle> getAdjacentTower(vector<Tourelle> tourelles, int position) {
 	vector<Tourelle> adjacent;
@@ -122,7 +112,6 @@ vector<Tourelle> getAdjacentTower(vector<Tourelle> tourelles, int position) {
 	}
 	return adjacent;
 }
-
 
 void Application::maximiseWalkerKilledWeatherConstraint(unsigned dist)
 {
@@ -141,6 +130,7 @@ void Application::maximiseWalkerKilledWeatherConstraint(unsigned dist)
 			}
 		}
 	}
+
 	for (vector<Tourelle>::iterator it = shooterPosition.begin(); it != shooterPosition.end(); ++it) {
 		if (it != shooterPosition.begin()) {
 			adjacent = getAdjacentTower(this->tourelles, it->getPosition());
@@ -159,7 +149,6 @@ void Application::maximiseWalkerKilledWeatherConstraint(unsigned dist)
 		cout << it->toString() << endl;
 }
 
-
 map<int, vector<int>> Application::computeIncompatibilities(unsigned dist)
 {
 	int position;
@@ -173,7 +162,6 @@ map<int, vector<int>> Application::computeIncompatibilities(unsigned dist)
 	}
 	return incompatibilities;
 }
-
 
 vector<int> Application::lookForIncompatibility(vector<Tourelle>::iterator &value, int position, unsigned dist) {
 	vector<int> incompatible;

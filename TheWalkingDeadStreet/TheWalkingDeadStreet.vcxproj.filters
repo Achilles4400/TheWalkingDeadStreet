@@ -57,7 +57,7 @@
     <ClInclude Include="utils.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="RSA.h">
+    <ClInclude Include="Vigenere.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -77,7 +77,7 @@
     <ClCompile Include="utils.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="RSA.cpp">
+    <ClCompile Include="Vigenere.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

@@ -11,7 +11,11 @@ string config_kevin = "C:\\Users\\Kevin\\Downloads\\devoir2\\devoir\\test\\T_4_2
 int main()
 {
 	int distConstraint = 5;
-	std::string test = config_kevin;
+
+	string msg = "ceci est un test de vigenere";
+	string key = "boearty";
+
+	string test = config_vincent;
 	cout << test << endl;
 
 	Application myTest(test);
@@ -20,14 +24,11 @@ int main()
 	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
 	//myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
 
-	/*RSA rsa;
-	Key key = rsa.generateKeys();
-	long msg;
-	cout << "entrez le message ：" << endl;
-	cin >> msg;
-	long msg_des = rsa.encrypt(msg, key.eKey, key.primeKey);
-	cout << "message crypté ：" << msg_des << endl;
-	msg_des = rsa.encrypt(msg_des, key.modKey, key.primeKey);
-	cout << "message original ：" << msg_des << endl;*/
+	cout << msg << endl;
+	string encrypt = Vigenere::encryption(msg, key);
+	cout << encrypt << endl;
+	string decrypt = Vigenere::decryption(encrypt, key);
+	cout << decrypt << endl;
+
 	return 0;
 }
