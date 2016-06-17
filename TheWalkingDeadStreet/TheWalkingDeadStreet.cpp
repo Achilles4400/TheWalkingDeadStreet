@@ -12,10 +12,10 @@ int main()
 {
 	int distConstraint = 5;
 
-	string msg = "ceci est un test de vigenere";
-	string key = "boearty";
+	//string msg = "ceci est un test de vigenere";
+	//string key = "boearty";
 
-	string test = config_vincent;
+	string test = config_kevin;
 	cout << test << endl;
 
 	Application myTest(test);
@@ -24,11 +24,11 @@ int main()
 	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
 	myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
 
-	cout << msg << endl;
-	string encrypt = Vigenere::encryption(msg, key);
-	cout << encrypt << endl;
-	string decrypt = Vigenere::decryption(encrypt, key);
-	cout << decrypt << endl;
+	//cout << msg << endl;
+	//string encrypt = Vigenere::encryption(msg, key);
+	//cout << encrypt << endl;
+	//string decrypt = Vigenere::decryption(encrypt, key);
+	//cout << decrypt << endl;
 
 	return 0;
 }

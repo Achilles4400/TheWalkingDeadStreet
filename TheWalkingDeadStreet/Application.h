@@ -30,6 +30,7 @@ public:
 	void getShootersAndTourelleNumber(ifstream &file);
 	vector<int> lookForIncompatibility(vector<Tourelle>::iterator &it, int position, unsigned dist);
 	Tourelle findBestEstimationTourelle(vector<Tourelle> tourelleVector, int *tourelleIndex);
+	bool isDistRespected(Tourelle tourelle, vector<Tourelle> tourelles, unsigned dist);
 
 	map<int, vector<int>> computeIncompatibilities(unsigned dist);
 
