@@ -18,7 +18,7 @@ int main()
 
 	//myTest.maximiseWalkerKilled();
 	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
-	//myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
+	myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
 
 	/*RSA rsa;
 	Key key = rsa.generateKeys();

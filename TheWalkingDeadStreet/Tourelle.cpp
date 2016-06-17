@@ -9,6 +9,10 @@ Tourelle::Tourelle(int distance, int estimation, int position)
 	this->position = position;
 }
 
+Tourelle::Tourelle()
+{
+
+}
 
 Tourelle::~Tourelle()
 {

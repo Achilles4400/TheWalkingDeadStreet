@@ -24,11 +24,12 @@ public:
 	void sortTourellesByEst();
 	void sortTourellesByDist();
 	void maximiseWalkerKilled();
-	void maximiseWalkerKilledDistConstraint(unsigned dist);
+	vector<Tourelle> maximiseWalkerKilledDistConstraint(unsigned dist);
 	void maximiseWalkerKilledWeatherConstraint(unsigned dist);
 	void getTourelles(ifstream &file);
 	void getShootersAndTourelleNumber(ifstream &file);
 	vector<int> lookForIncompatibility(vector<Tourelle>::iterator &it, int position, unsigned dist);
+	Tourelle findBestEstimationTourelle(vector<Tourelle> tourelleVector, int *tourelleIndex);
 
 	map<int, vector<int>> computeIncompatibilities(unsigned dist);
 
@@ -41,3 +42,4 @@ private:
 	
 };
 
+void printVector(vector<Tourelle> vector);
