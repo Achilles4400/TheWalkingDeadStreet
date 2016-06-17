@@ -22,7 +22,7 @@ int main()
 
 	//myTest.maximiseWalkerKilled();
 	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
-	//myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
+	myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
 
 	cout << msg << endl;
 	string encrypt = Vigenere::encryption(msg, key);

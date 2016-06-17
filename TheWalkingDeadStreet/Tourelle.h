@@ -8,6 +8,7 @@ class Tourelle
 {
 public:
 	Tourelle(int distance, int estimation, int position);
+	Tourelle();
 	~Tourelle();
 	int getDistance() { return this->distance; }
 	int getEstimation() { return this->estimation; }
