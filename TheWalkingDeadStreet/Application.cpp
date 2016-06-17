@@ -138,22 +138,6 @@ Tourelle Application::findBestEstimationTourelle(vector<Tourelle> tourelleVector
 
 void Application::maximiseWalkerKilledWeatherConstraint(unsigned dist)
 {
-	/*
-	
-	vector<Tourelle> shooterPosition;
-	int shooterPlaced = 0;
-	map<int, vector<int>> incompatibilities = computeIncompatibilities(dist);
-
-	sortTourellesByEst();
-	for (vector<Tourelle>::iterator it = this->tourelles.begin(); it != this->tourelles.end(); ++it) {
-		if (utils::isCompatible(shooterPosition, incompatibilities.at(it->getPosition()))) {
-			if (shooterPlaced < this->nombreDeTtireur) {
-				shooterPosition.push_back(*it);
-				shooterPlaced++;
-			}
-		}
-	}*/
-
 
 	int weather = initWeather();
 	vector<Tourelle> adjacent;
@@ -170,48 +154,36 @@ void Application::maximiseWalkerKilledWeatherConstraint(unsigned dist)
 
 	while (shooterPlaced < this->nombreDeTtireur) {
 		Tourelle tourelle = findBestEstimationTourelle(tmpTourelles, &tourelleIndex);
-		tmpTourelles[tourelle.getPosition()].setEstimation(tmpTourelles[tourelle.getPosition()].getEstimation() * (100 - abs(initWeather())) / 100);
-		if (weather >= 0) {
-			if(tourelle.getPosition() + 1 == tmpTourelles[tourelle.getPosition() + 1].getPosition())
-				tmpTourelles[tourelle.getPosition() + 1].setEstimation(tmpTourelles[tourelle.getPosition() + 1].getEstimation() * (100 - abs(initWeather())) / 100);
-			if(tourelle.getPosition() - 1 == tmpTourelles[tourelle.getPosition() - 1].getPosition())
-				tmpTourelles[tourelle.getPosition() - 1].setEstimation(tmpTourelles[tourelle.getPosition() - 1].getEstimation() * (100 - abs(initWeather())) / 100);
+		if (isDistRespected(tourelle, result, dist)) {
+			tmpTourelles[tourelle.getPosition()].setEstimation(tmpTourelles[tourelle.getPosition()].getEstimation() * (100 - abs(initWeather())) / 100);
+			if (weather >= 0) {
+				if (tourelle.getPosition() + 1 == tmpTourelles[tourelle.getPosition() + 1].getPosition())
+					tmpTourelles[tourelle.getPosition() + 1].setEstimation(tmpTourelles[tourelle.getPosition() + 1].getEstimation() * (100 - abs(initWeather())) / 100);
+				if (tourelle.getPosition() - 1 == tmpTourelles[tourelle.getPosition() - 1].getPosition())
+					tmpTourelles[tourelle.getPosition() - 1].setEstimation(tmpTourelles[tourelle.getPosition() - 1].getEstimation() * (100 - abs(initWeather())) / 100);
+			}
+			else {
+				if (tourelle.getPosition() + 1 == tmpTourelles[tourelle.getPosition() + 1].getPosition())
+					tmpTourelles[tourelle.getPosition() + 1].setEstimation(tmpTourelles[tourelle.getPosition() + 1].getEstimation() * (100 + abs(initWeather())) / 100);
+				if (tourelle.getPosition() - 1 == tmpTourelles[tourelle.getPosition() - 1].getPosition())
+					tmpTourelles[tourelle.getPosition() - 1].setEstimation(tmpTourelles[tourelle.getPosition() - 1].getEstimation() * (100 + abs(initWeather())) / 100);
+			}
+			result.push_back(tourelle);
+			shooterPlaced++;
 		}
-		else {
-			if (tourelle.getPosition() + 1 == tmpTourelles[tourelle.getPosition() + 1].getPosition())
-				tmpTourelles[tourelle.getPosition() + 1].setEstimation(tmpTourelles[tourelle.getPosition() + 1].getEstimation() * (100 + abs(initWeather())) / 100);
-			if (tourelle.getPosition() - 1 == tmpTourelles[tourelle.getPosition() - 1].getPosition())
-				tmpTourelles[tourelle.getPosition() - 1].setEstimation(tmpTourelles[tourelle.getPosition() - 1].getEstimation() * (100 + abs(initWeather())) / 100);
-		}
-		result.push_back(tourelle);
 		tmpTourelles.erase(tmpTourelles.begin() + tourelleIndex);
-		shooterPlaced++;
 	}
 	for (vector<Tourelle>::iterator it = result.begin(); it != result.end(); ++it)
 		cout << it->toString() << endl;
 
+}
 
-
-
-
-
-
-	/*for (vector<Tourelle>::iterator it = shooterPosition.begin(); it != shooterPosition.end(); ++it) {
-		if (it != shooterPosition.begin()) {
-			adjacent = getAdjacentTower(this->tourelles, it->getPosition());
-			it->setEstimation(it->getEstimation() + it->getEstimation() * weather);
-		}
-		else {
-			if (weather < 0) {
-				for (vector<Tourelle>::iterator adja = adjacent.begin(); adja != adjacent.end(); ++adja) {
-
-				}
-			}
-			adjacent = getAdjacentTower(this->tourelles, it->getPosition());
-		}
+bool Application::isDistRespected(Tourelle tourelle, vector<Tourelle> tourelles, unsigned dist) {
+	for (vector<Tourelle>::iterator it = tourelles.begin(); it != tourelles.end(); ++it) {
+		if (abs(it->getDistance() - tourelle.getDistance()) < dist)
+			return false;
 	}
-	for (vector<Tourelle>::iterator it = shooterPosition.begin(); it != shooterPosition.end(); ++it)
-		cout << it->toString() << endl;*/
+	return true;
 }
 
 
