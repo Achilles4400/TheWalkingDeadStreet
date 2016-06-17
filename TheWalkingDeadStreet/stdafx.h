@@ -9,6 +9,7 @@
 
 #include "Application.h"
 #include "Vigenere.h"
+#include "Supplying.h"
 
 #include <stdio.h>
 #include <tchar.h>
