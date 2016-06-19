@@ -31,13 +31,11 @@ public:
 
 	void calculDistance();
 	void sortDistance();
-	void setOldDistance();
 
 	Path findNeighbour(int city);
 	void findBestPath();
 
 private:
-	vector<vector<int>> oldDistance;
 	vector<vector<Distance>> distance;
 
 	vector<City> cities;

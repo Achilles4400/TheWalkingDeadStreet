@@ -24,7 +24,7 @@ public:
 	void sortTourellesByEst();
 	void sortTourellesByDist();
 	void maximiseWalkerKilled();
-	vector<Tourelle> maximiseWalkerKilledDistConstraint(unsigned dist);
+	void maximiseWalkerKilledDistConstraint(unsigned dist);
 	void maximiseWalkerKilledWeatherConstraint(unsigned dist);
 	void getTourelles(ifstream &file);
 	void getShootersAndTourelleNumber(ifstream &file);

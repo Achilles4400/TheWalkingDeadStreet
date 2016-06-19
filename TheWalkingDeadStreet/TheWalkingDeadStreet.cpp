@@ -11,28 +11,26 @@ string config_kevin = "C:\\Users\\Kevin\\Downloads\\devoir2\\devoir\\test\\T_4_2
 
 int main()
 {
-	int distConstraint = 5;
+	int distConstraint = 10;
 
 	string msg = "ceci est un test de vigenere";
 	string key = "boearty";
 
 	string test = config_vincent;
 	string citiesTest = config_vincent_cities;
-	cout << citiesTest << endl;
+	cout << test << endl;
 
 	Application myTest(test);
 
 	//myTest.maximiseWalkerKilled();
-	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
+	myTest.maximiseWalkerKilledDistConstraint(distConstraint);
 	//myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
 
+	/*
 	Supplying supplying(citiesTest);
 	supplying.calculDistance();
-	//supplying.printPath();
-	//supplying.sortDistance();
-	//supplying.printDistance();
-	//supplying.printCities();
 	supplying.findBestPath();
+	*/
 
 	/*
 	cout << msg << endl;

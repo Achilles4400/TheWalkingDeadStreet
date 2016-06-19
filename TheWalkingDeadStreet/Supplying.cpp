@@ -100,14 +100,6 @@ void Supplying::sortDistance()
 	}
 }
 
-void Supplying::setOldDistance()
-{
-	this->oldDistance.resize(this->cities.size(), vector<int>(this->cities.size()));
-	for (int i = 0; i < this->cities.size(); i++)
-		for (int j = 0; j < this->cities.size(); j++)
-			this->oldDistance[i][j] = this->distance[i][j].dist;
-}
-
 Path Supplying::findNeighbour(int city)
 {
 	Path bestPath;
@@ -140,21 +132,18 @@ Path Supplying::findNeighbour(int city)
 		}
 	}
 
-	length += this->oldDistance[city - 1][0];
-	indexAway++;
-
 	bestPath.lenght = length;
 	bestPath.path = path;
 
+	delete visited;
+
 	return bestPath;
-	
 }
 
 void Supplying::findBestPath()
 {
 	vector<Path> path;
 	calculDistance();
-	setOldDistance();
 	sortDistance();
 
 	for (int i = 1; i < this->cities.size()-1; i++) {
