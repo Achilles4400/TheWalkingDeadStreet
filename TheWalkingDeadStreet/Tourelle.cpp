@@ -7,6 +7,7 @@ Tourelle::Tourelle(int distance, int estimation, int position)
 	this->distance = distance;
 	this->estimation = estimation;
 	this->position = position;
+	this->estimationAfterWeather = 0;
 }
 
 Tourelle::Tourelle()

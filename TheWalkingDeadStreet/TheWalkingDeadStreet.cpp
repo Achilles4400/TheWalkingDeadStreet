@@ -16,7 +16,7 @@ int main()
 	string msg = "ceci est un test de vigenere";
 	string key = "boearty";
 
-	string test = config_vincent;
+	string test = config_kevin;
 	string citiesTest = config_vincent_cities;
 	cout << test << endl;
 
@@ -39,6 +39,15 @@ int main()
 	string decrypt = Vigenere::decryption(encrypt, key);
 	cout << decrypt << endl;
 	*/
+	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
+	printTourelles(myTest.maximiseWalkerKilledWeatherConstraint(distConstraint));
+	myTest.shooterSimulationPerHour(distConstraint);
+
+	//cout << msg << endl;
+	//string encrypt = Vigenere::encryption(msg, key);
+	//cout << encrypt << endl;
+	//string decrypt = Vigenere::decryption(encrypt, key);
+	//cout << decrypt << endl;
 
 	return 0;
 }

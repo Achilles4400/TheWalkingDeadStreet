@@ -14,6 +14,8 @@ public:
 	int getEstimation() { return this->estimation; }
 	int getPosition() { return this->position; }
 	void setEstimation(int estimation) { this->estimation = estimation; }
+	void setEstimationAfterWeather(int estimantionAfterWeather) { this->estimationAfterWeather = estimantionAfterWeather;  }
+	int getEstimationAfterWeather() { return this->estimationAfterWeather; }
 
 	string toString();
 
@@ -21,5 +23,5 @@ private:
 	int distance;
 	int estimation;
 	int position;
+	int estimationAfterWeather;
 };
-
