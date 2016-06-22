@@ -13,17 +13,17 @@ int main()
 {
 	int distConstraint = 10;
 
-	string msg = "ceci est un test de vigenere";
+	string msg = "ceci est un test de l'algorithme de cryptage de vigenere";
 	string key = "boearty";
 
 	string test = config_kevin;
 	string citiesTest = config_vincent_cities;
 	cout << test << endl;
 
-	Application myTest(test);
+	//Application myTest(test);
 
 	//myTest.maximiseWalkerKilled();
-	myTest.maximiseWalkerKilledDistConstraint(distConstraint);
+	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
 	//myTest.maximiseWalkerKilledWeatherConstraint(distConstraint);
 
 	/*
@@ -40,14 +40,14 @@ int main()
 	cout << decrypt << endl;
 	*/
 	//myTest.maximiseWalkerKilledDistConstraint(distConstraint);
-	printTourelles(myTest.maximiseWalkerKilledWeatherConstraint(distConstraint));
-	myTest.shooterSimulationPerHour(distConstraint);
+	//printTourelles(myTest.maximiseWalkerKilledWeatherConstraint(distConstraint));
+	//myTest.shooterSimulationPerHour(distConstraint);
 
-	//cout << msg << endl;
-	//string encrypt = Vigenere::encryption(msg, key);
-	//cout << encrypt << endl;
-	//string decrypt = Vigenere::decryption(encrypt, key);
-	//cout << decrypt << endl;
+	cout << msg << endl;
+	string encrypt = Vigenere::encryption(msg, key);
+	cout << encrypt << endl;
+	string decrypt = Vigenere::decryption(encrypt, key);
+	cout << decrypt << endl;
 
 	return 0;
 }

@@ -1,12 +1,9 @@
 #include "stdafx.h"
 #include "Vigenere.h"
 
-const string alphabet = "abcdefghijklmnopqrstuvwxyz";
-
 Vigenere::Vigenere()
 {
 }
-
 
 Vigenere::~Vigenere()
 {
